@@ -1,0 +1,16 @@
+%html{ :lang => I18n.locale.to_s.downcase }
+  %head
+    %meta(charset="UTF-8")
+    %title= "#{page_title} • Rails secure test"
+    = stylesheet_link_tag "application"
+    = dispatcher_tag
+    = csrf_meta_tag
+
+    /[if lt IE 9]
+      %script{ :src => "http://html5shiv.googlecode.com/svn/trunk/html5.js" }
+
+  = body do
+    = flash_messages
+    = yield
+    = javascript_include_tag "application"
+
