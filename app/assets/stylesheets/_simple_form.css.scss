@@ -1,0 +1,42 @@
+.simple_form {
+  overflow: hidden;
+  padding: 0 5px;
+  .inputs {
+    .input {
+      clear: both;
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      input.email, input.string, input.password {
+        padding: 5px;
+        font-size: 15px;
+        &:focus {
+        }
+      }
+      input.boolean {
+        float: left;
+        margin: 5px 8px 5px 0;
+      }
+      label.boolean {
+        line-height: 23px;
+        font-size: 80%;
+      }
+    }
+    .field_with_errors {
+      input.email, input.string, input.password {
+        border-color: #ee7171;
+      }
+    }
+    .error, .hint {
+      display: block;
+      margin: 5px 0 8px;
+      color: #999;
+      font-size: 75%;
+    }
+  }
+  .actions {
+    float: left;
+    margin: 20px 0 10px;
+  }
+}

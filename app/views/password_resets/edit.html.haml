@@ -1,0 +1,8 @@
+%h1 Password Resets
+= simple_form_for @user, :url => password_reset_path(params[:id]) do |f|
+  .inputs
+    = f.input :password
+    = f.input :password_confirmation
+  .actions
+    = f.button :submit
+

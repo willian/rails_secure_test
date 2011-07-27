@@ -1,0 +1,21 @@
+= simple_form_for @user do |f|
+  .inputs
+    = f.input :name
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    = f.input :service_name, :as => :hidden
+    = f.input :service_uid, :as => :hidden
+    = f.input :service_uname, :as => :hidden
+    = f.input :service_uemail, :as => :hidden
+  .actions
+    = f.button :submit
+
+- if session[:omniauth_info]
+  %p
+    Infelizmente o #{session[:omniauth_info][:service_name].humanize} não informa seu e-mail. Dessa forma não podemos localizar se você já tem cadastro no nosso site.
+  %p
+    Se você já for cadastrado no nosso site, #{link_to "faça seu login aqui", signin_path} que iremos relacionar sua conta com o #{session[:omniauth_info][:service_name].humanize} automaticamente.
+  %p
+    %em
+      Não será preceiso repetir esse processo na próxima vez que você utilizar o #{session[:omniauth_info][:service_name].humanize}

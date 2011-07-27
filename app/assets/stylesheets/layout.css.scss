@@ -1,0 +1,314 @@
+@import "base";
+
+@import "compass/css3/text-shadow";
+@import "compass/css3/images";
+@import "compass/css3/border-radius";
+
+body {
+  font-family: $site-fontface;
+  background: #fafafa;
+}
+
+.limit {
+  overflow: hidden;
+  margin: 0 auto;
+  width: $site-width;
+}
+
+header {
+
+  #access {
+    color: #454545;
+    font-size: 11px;
+    text-align: right;
+    border-bottom: 3px solid #ddd;
+    background: #f6f6f6;
+    nav {
+      padding: 5px 10px;
+      text-shadow: #fff 0 1px 0;
+      a {
+        margin: 0 5px;
+        color: #454545;
+        font-size: 13px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #brand {
+    overflow: hidden;
+    background: url("/assets/bg.jpg") repeat-x;
+
+    .limit {
+      overflow: hidden;
+      position: relative;
+      padding: 10px 5px;
+    }
+
+    #logo {
+      float: left;
+    }
+
+    #search {
+      position: absolute;
+      right: 5px;
+      top: 22px;
+
+      .search_field, .search_button {
+        margin: 0 2px;
+
+        border: 1px solid;
+        border-color: #ddd #aaa #aaa #ddd;
+      }
+
+      .search_field {
+        float: left;
+        width: 400px;
+        height: 37px;
+        padding: 3px 5px;
+        font-size: 22px;
+
+        border-radius: 3px;
+      }
+
+      .search_button {
+        width: 125px;
+        padding: 5px;
+        font-size: 18px;
+      }
+    }
+    p {
+      clear: left;
+    }
+  }
+
+  #menus {
+    border-top: 3px solid #ccc;
+    border-bottom: 1px solid #ddd;
+    background: #f6f6f6;
+
+    #menu a, #shortcuts a {
+      float: left;
+      text-decoration: none;
+    }
+
+    #menu {
+      float: left;
+      padding: 5px;
+
+      a {
+        margin: 0 6px;
+        padding: 7px 10px 8px 5px;
+        color: #454545;
+        font-size: 15px;
+        border-right: 1px dashed #ccc;
+
+        &.selected {
+          font-weight: bold;
+        }
+      }
+    }
+
+    #social {
+      float: left;
+      padding: 7px 0;
+
+      a {
+        float: left;
+        margin-right: 5px;
+      }
+
+      .twitter, .facebook, .orkut {
+        display: block;
+        width: 25px;
+        height: 25px;
+        text-indent: -99999px;
+      }
+
+      .twitter {
+        background: url('/assets/twitter.png') no-repeat;
+      }
+
+      .facebook {
+        background: url('/assets/facebook.png') no-repeat;
+      }
+
+      .orkut {
+        background: url('/assets/orkut.png') no-repeat;
+      }
+    }
+
+    #shortcuts {
+      float: right;
+      margin-top: 4px;
+
+      a {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+#message-board {
+  position: relative;
+  display: none;
+  .message {
+    padding: 8px;
+    color: #fff;
+    &.notice {
+      background: #809C38;
+    }
+    &.alert {
+      background: #EA7A26;
+    }
+  }
+  #ms_close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+#content {
+  clear: both;
+  overflow: hidden;
+  padding: 10px 0;
+
+  nav#bradcrumb {
+    margin-bottom: 10px;
+  }
+  article {
+    float: left;
+    padding: 15px;
+    width: 710px;
+    border: 1px solid #696969;
+    background: #fff;
+  }
+  aside {
+    float: right;
+    width: 185px;
+    padding: 15px;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: #E36402;
+  }
+}
+
+footer {
+  color: #fff;
+  text-shadow: #333 0 1px 0;
+  font-size: 13px;
+  border-top: 2px solid #ea7a26;
+  background: #ac4b02;
+
+  .limit {
+    overflow: hidden;
+    padding: 10px 5px;
+  }
+
+  #copyright {
+    float: right;
+    text-align: right;
+
+    p {
+      margin-top: 5px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    li {
+      color: #e1e1e1;
+      margin-bottom: 6px;
+
+      a {
+        color: #e1e1e1;
+      }
+    }
+
+    .fc {
+      float: left;
+      width: 170px;
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+  }
+
+  ul#footer-links {
+    float: left;
+  }
+}
+
+/* buttons & tabs */
+.btn-default, .tab {
+  @include border-radius(3px);
+
+  &:hover {
+
+  }
+
+  &:active {
+
+  }
+}
+
+.btn-default {
+  @include single-text-shadow(#fff, 0, 1px, 0);
+
+  @include background(linear-gradient(center bottom, rgb(251, 176, 0) 20%, rgb(255, 226, 80) 80%));
+
+  padding: 2px 4px;
+  color: #333;
+  text-decoration: none;
+
+  border: 1px solid;
+  border-color: #eca405 #cd8e03 #cd8e03 #eca405;
+
+  &:hover {
+
+  }
+
+  &:active {
+    @include background(linear-gradient(center bottom, rgb(255, 226, 80) 20%, rgb(251, 176, 0) 80%));
+
+    position: relative;
+    top: 1px;
+  }
+}
+
+.tab {
+  @include single-text-shadow(#333, 0, 1px, 0);
+  @include border-radius(3px);
+  @include background(linear-gradient(center bottom, rgb(123, 180, 9) 20%, rgb(173, 214, 77) 80%));
+
+  padding: 7px 10px;
+
+  color: #fff;
+
+  border: 1px solid #809c38;
+
+  &:hover {
+
+  }
+
+  &:active {
+    @include background(linear-gradient(center bottom, rgb(173, 214, 77) 20%, rgb(123, 180, 9) 80%));
+
+    position: relative;
+    top: 1px;
+  }
+}
+
+/* Components */
+@import "simple_form";

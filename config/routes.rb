@@ -1,4 +1,16 @@
 RailsSecureTest::Application.routes.draw do
+  root :to => "home#index"
+
+  match "signin" => "sessions#new", :as => :signin
+  match "signout" => "sessions#destroy", :as => :signout
+  match "signup" => "users#new", :as => :signup
+  resources :users, :only => :create
+  resources :sessions, :only => [:create, :destroy]
+  resources :password_resets, :except => [:destroy, :index]
+
+  match "auth/:provider/callback" => "sessions#create"
+  match "auth/failure" => "sessions#failure"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
